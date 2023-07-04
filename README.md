@@ -11,7 +11,7 @@ Top Interview Questions
   </tr>
     <tr>
     <td > Minimum Size Subarray Sum </td>
-    <td> <a href="https://github.com/reeteshkesarwani/Leetcode180/blob/main/Sliding%20window/209%20Minimum%20subarray%20sum%20k.java"> DFS Traversal</a></td>
+    <td> <a href="https://github.com/reeteshkesarwani/Leetcode180/blob/main/Sliding%20window/209%20Minimum%20subarray%20sum%20k.java"> Minimum Size Subarray Sum </a></td>
   </tr>
    <tr>
     <td > Fruits in basket </td>
