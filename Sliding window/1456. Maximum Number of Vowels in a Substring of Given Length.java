@@ -87,3 +87,45 @@ class Solution {
         }
     }
 }
+
+/*
+ Method 2
+
+ class Solution {
+    public int maxVowels(String s, int k) {
+        int vc=0;
+        int maxvc=0;
+
+        for(int i=0;i<k;i++)
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                vc++;
+            }
+        }
+        maxvc=vc;
+        for(int i=k;i<s.length();i++)
+        {
+            if(isVowel(s.charAt(i-k)))
+            {
+                vc--;
+            }
+            if(isVowel(s.charAt(i)))
+            {
+                vc++;
+                maxvc=Math.max(vc,maxvc);
+            }
+            
+        }
+        return maxvc;
+    }
+    public boolean isVowel(Character ch)
+    {
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        {
+            return true;
+        }
+        return false;
+    }
+}
+ */

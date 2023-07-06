@@ -39,13 +39,12 @@ Constraints:
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         
-        // return UsingSlidingWindow(nums,k); //Time Limit Exceded
-        return UsingDeque(nums,k);
+        //return UsingSlidingWindow(nums,k);
+        //return UsingDeque(nums,k);
+        return usinglist(nums,k);
        
     }
 
-
-    //Optimal Approach
     public static int[] UsingDeque(int []nums,int k)
     {
         Deque<Integer> deq = new ArrayDeque<Integer>();
@@ -70,8 +69,6 @@ class Solution {
         }
         return al;
     }
-
-    //Using Sliding Window Technique
     public static int[] UsingSlidingWindow(int[] nums, int k)
     {
          ArrayList<Integer>al=new ArrayList<>();
@@ -108,6 +105,30 @@ class Solution {
         for(int i=0;i<ans.length;i++)
         {
             ans[i]=al.get(i);
+        }
+        return ans;
+    }
+    public static int[] usinglist(int nums[],int k)
+    {
+        int n=nums.length;
+        int ans[]=new int[n-k+1];
+        int t=0;
+        List<Integer>deq=new ArrayList<Integer>();
+        
+        for(int i=0;i<nums.length;i++)
+        {
+            if(deq.size()!=0 && deq.get(0)==i-k) deq.remove(0);
+
+            while(deq.size()!=0  && nums[deq.get(deq.size()-1)]<nums[i])
+            {
+                deq.remove(deq.size()-1);
+            }
+            deq.add(i);
+            if(i>=k-1)
+            {
+                ans[t]=nums[deq.get(0)];
+                t++;
+            }
         }
         return ans;
     }

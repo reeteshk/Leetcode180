@@ -74,3 +74,38 @@ class Solution {
         return max;
     }
 }
+
+
+//METHOD 2
+
+/*
+ 
+class Solution {
+    public int characterReplacement(String s, int k) {
+        int n=s.length();
+        int start=0;
+        int end=0;
+        int maxlength=0;
+        int maxcount=0;
+        int chararr[]=new int[26];
+
+        while(end<n)
+        {
+            chararr[s.charAt(end)-'A']++;
+            int count=chararr[s.charAt(end)-'A'];
+            maxcount=Math.max(maxcount,count);
+            while(end-start-maxcount+1>k)
+            {
+                chararr[s.charAt(start)-'A']--;
+                start++;
+            }
+            
+            maxlength=Math.max(maxlength,end-start+1);
+            end++;
+
+        }
+        return maxlength;
+    }
+}
+
+ */

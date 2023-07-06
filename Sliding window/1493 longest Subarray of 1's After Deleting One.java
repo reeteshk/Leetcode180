@@ -64,3 +64,44 @@ class Solution {
         return ans;
     }
 }
+
+//Method 2
+
+/*
+ class Solution {
+    public int longestSubarray(int[] nums) {
+        
+        int start=0;
+        int end=0;
+        int maxlength=0;
+        
+        int countzero=0;
+        
+        while(end<nums.length)
+        {
+            if(nums[end]==1)
+            {
+                end++;
+                maxlength=Math.max(end-start-1,maxlength);
+            }
+            else if(nums[end]==0 && countzero<1)
+            {
+                end++;
+                countzero++;
+                maxlength=Math.max(end-start-countzero,maxlength);
+            }
+
+            else
+            {
+                while(nums[start]!=0)
+                {
+                    start++;
+                }
+                countzero--;
+                start++;
+            }
+        }
+        return maxlength;
+    }
+}
+ */
